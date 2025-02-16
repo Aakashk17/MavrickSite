@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ECEFF1, #F5F5F5);
+}
+
+header {
+    background: radial-gradient(circle, #1266cc, #abd8fa);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.collaborations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.collaboration {
+    background: radial-gradient(circle, #D7E9FF, #EAF6FF);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.collaboration:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}

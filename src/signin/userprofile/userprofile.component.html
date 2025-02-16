@@ -1,0 +1,10 @@
+<div class="loginbox">
+        <h2 class='fas'>&#xf2bd;</h2>
+        <ul class="list">
+            <li *ngFor="let user of userdetails">USER ID : {{ user.userid }}</li>
+            <li *ngFor="let user of userdetails">NAME : {{ user.username }}</li>
+            <li *ngFor="let user of userdetails">EMAIL : {{ user.email }}</li>
+        </ul>
+        <button (click)="lout()">LogOut</button>
+        <br><br><br><br>
+</div>

@@ -1,0 +1,67 @@
+<app-dashboard></app-dashboard>
+<div class="profile-container">
+  <h2>Employee Profile</h2>
+  <form [formGroup]="profileForm" name="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="EmployeeId">Employee ID:</label><br>
+        <input type="text" id="EmployeeId" formControlName="EmployeeId">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="Employeename">Employee Name:</label><br>
+        <input type="text" id="Employeename" formControlName="Employeename">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="Department">Department:</label><br>
+        <input type="text" id="Department" formControlName="Department">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="jobtitle">Job Title:</label><br>
+        <input type="text" id="jobtitle" formControlName="jobtitle">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="phonenumber">Phone Number:</label><br>
+        <input type="text" id="phonenumber" formControlName="phonenumber">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="gender">Gender:</label><br>
+        <input type="text" id="gender" formControlName="gender">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="dob">Date of Birth:</label><br>
+        <input type="text" id="dob" formControlName="dob">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="matrialstatus">Marital Status:</label><br>
+        <input type="text" id="matrialstatus" formControlName="matrialstatus">
+      </div>
+    </div>
+    <div class="form-group col-md-6"><br>
+      <label for="managername">Manager Name:</label><br>
+      <input type="text" id="managername" formControlName="managername">
+    </div>
+    <div class="form-group col-md-6"><br>
+      <label for="salary">Salary:</label><br>
+      <input type="text" id="salary" formControlName="salary">
+    </div>
+    <div class="button-group">
+      <button type="submit" style="font-size:17px">Save   <i class="fa fa-save"></i></button>
+      <button type="button" style="font-size:19px" (click)="onDelete()" class="fa"> &#xf014; </button>
+      <button (click)="onclose()" style="font-size:17px" >close <i class="fa fa-close"></i></button>
+      <h4>{{mes}}</h4>
+    </div>
+  </form>
+  
+  <div class="deletepopup" id="deletePopup" *ngIf="showdeletepopup">
+    <button class="close-button" (click)="closePopup()">&times;</button>
+    <p>Are you sure you want to delete the employee?</p>
+    <button (click)="deleteEmployee()">Delete</button>
+</div>
+
+</div>

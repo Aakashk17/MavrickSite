@@ -1,0 +1,35 @@
+<app-dashboard></app-dashboard>
+
+<body>
+    <div class="container">
+        <h1 appDanger>User List</h1>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Admin</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let log of signup">
+                    <td>{{log.userid}}</td>
+                    <td>{{log.username}}</td>
+                    <td>{{log.email}}</td>
+                    <td>{{log.password}}</td>
+                    <td>{{log.Admin}}</td>
+                    <td><button class="fa fa-trash-o" style="font-size:28px;" (click)="gototdelete(log.userid)"></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="deletepopup" id="deletePopup" *ngIf="showdeletepopup">
+        <button class="close-button" (click)="closePopup()">&times;</button>
+        <p>Are you sure you want to delete the User</p>
+        <button (click)="deleteEmployee()">Delete</button>
+    </div>
+</body>
+<router-outlet></router-outlet>

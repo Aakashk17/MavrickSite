@@ -1,0 +1,35 @@
+.manager-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header {
+    font-size: 36px; 
+}
+h1{
+    text-align: center;
+    text-decoration:2px underline double red;
+}
+.manager-container:hover {
+    transform: translateX(10px);
+}
+
+.manager-image {
+    flex: 1;
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.manager-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.manager-details {
+    flex: 3;
+}

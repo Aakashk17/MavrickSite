@@ -1,0 +1,180 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  margin: 20px 0;
+}
+
+.center-cell {
+  text-align: center;
+  vertical-align: middle;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+
+thead tr {
+  background-color: #333;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.profile-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.profile-button:hover {
+  background-color: #45a049;
+}
+
+tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+.employee-container {
+  position: relative;
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  height: 90%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 75%;
+}
+
+
+.form-group label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group input[type="date"],
+.form-group input[type="number"] {
+  width: 60%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 10px;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+select#matrialstatus,
+select#gender {
+  width: 200px;
+  height: 40px;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+button{
+  margin-right: 20px;
+  color: blue;
+}
+
+button:nth-child(1):hover{
+  background-color: blue;
+  color:white;
+}
+
+button:nth-child(2):hover{
+  background-color: blue;
+  color:white;
+}
+
+
+button:nth-child(3):hover{
+  background-color: red;
+  color:white;
+}
+
+.buttons button {
+  margin-right: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  width: 80px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.buttons button:hover {
+  background-color: #0056b3;
+}

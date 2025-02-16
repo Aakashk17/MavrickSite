@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.founder-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.founder-image img {
+    flex:5;
+    width: 400px;
+    height: 400px;
+    border-radius: 20%;
+    border: 5px dotted lightblue;
+    margin-left: 90px;
+    justify-content: center;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.summa{
+    flex:1;
+    right: 200px;
+    left: 200px;
+}
+.founder-details {
+    flex: 4;
+    padding-left: 50px;
+    animation: fadeInRight 1s ease-in-out;
+}
+
+.founder-name {
+    font-size: 36px;
+    color: #333;
+    margin: 0;
+    animation: nameBigger 1s ease-in-out;
+}
+
+.founder-description {
+    flex:1;
+    font-size: 12px;
+    color: #666;
+    margin: 20px 0;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes nameBigger {
+    0% {
+        font-size: 36px;
+    }
+    100% {
+        font-size: 48px;
+    }
+}

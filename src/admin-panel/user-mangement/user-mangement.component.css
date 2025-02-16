@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.user-table th,
+.user-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.user-table th {
+    background-color: #333;
+    color: white;
+}
+
+.user-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+button{
+    color: red;
+}
+
+button:hover{
+    color: white;
+    background-color: red;
+}
+
+
+/* Style for the popup container */
+.deletepopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  /* Style for the close button */
+  .close-button {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 16px;
+    color:blue;
+    background: transparent;
+  }
+  
+  /* Style for the close button on hover */
+  .close-button:hover {
+    color: rgb(241, 90, 90);
+  }
+  

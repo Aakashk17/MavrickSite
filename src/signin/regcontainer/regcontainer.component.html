@@ -1,0 +1,68 @@
+<body>
+	<div class="container" id="container">
+		<div class="form-container sign-up-container">
+			<form name="fg" [formGroup]="fg" (ngSubmit)="fg.valid && OnSumbit()">
+				<h1>Create Account</h1>
+				<div class="social-container">
+					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+				</div>
+				<span>or use your email for registration</span>
+				<input type="text" placeholder="Name" formControlName="username" />
+				<div *ngIf="fg.get('username')?.invalid && (fg.get('username')?.dirty || fg.get('username')?.touched)"
+					class="error-message">
+					<div *ngIf="fg.get('username')?.hasError('required')">Employee Name is required.</div>
+					<div *ngIf="fg.get('username')?.hasError('minlength')">Employee Name must be at least 2 characters
+						long.</div>
+				</div>
+				<input type="email" placeholder="Email" formControlName="email" />
+				<div *ngIf="fg.get('email')?.invalid && (fg.get('email')?.dirty || fg.get('email')?.touched)"
+					class="error-message">
+					<div *ngIf="fg.get('email')?.hasError('required')">Email is required.</div>
+				</div>
+				<input type="password" placeholder="Password" formControlName="password" />
+				<div *ngIf="fg.get('password')?.invalid && (fg.get('password')?.dirty || fg.get('password')?.touched)"
+					class="error-message">
+					<div *ngIf="fg.get('password')?.hasError('required')">password is required.</div>
+				</div>
+				<h4>{{mesage}}</h4>
+				<button>Sign Up</button>
+			</form>
+		</div>
+		<div class="form-container sign-in-container">
+			<form action="#" [formGroup]="sign">
+				<h1>Sign in</h1>
+				<div class="social-container">
+					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+				</div>
+				<span>or use your account</span>
+				<input type="email" placeholder="Email" formControlName="email" />
+				<input type="password" placeholder="Password" formControlName="password" />
+				<div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+				<br>
+
+				<button (click)="login()">Sign In</button>
+
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Welcome Back!</h1>
+					<p>To keep connected with us please login with your personal info</p>
+					<button class="ghost" id="signIn">Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Hello, Friend!</h1>
+					<p>Enter your personal details and start journey with us</p>
+					<button class="ghost" id="signUp">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>

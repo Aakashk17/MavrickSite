@@ -1,0 +1,128 @@
+<app-dashboard></app-dashboard>
+<table class="center-cell">
+  <thead>
+    <tr class="center-cell">
+      <th>EMPLOYEE ID</th>
+      <th>NAME</th>
+      <th>DEPARTMENT</th>
+      <th>JOB TITLE</th>
+      <th>PHONE NUMBER</th>
+      <th>GENDER</th>
+      <th>Profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees">
+      <td class="center-cell">{{emp.EmployeeId}}</td>
+      <td class="center-cell">{{emp.Employeename}}</td>
+      <td class="center-cell">{{emp.Department}}</td>
+      <td class="center-cell">{{emp.jobtitle}}</td>
+      <td class="center-cell">{{emp.phonenumber}}</td>
+      <td class="center-cell">{{emp.gender}}</td>
+      <td class="center-cell"><button class="fa fa-user-circle-o" style="font-size:30px"
+          (click)="navigateToProfile(emp.EmployeeId)"></button></td>
+    </tr>
+  </tbody>
+</table>
+<div class="employee-container">
+  <button class="floating-button" (click)="toggleForm()">+</button>
+</div>
+
+
+<div class="modal" *ngIf="showForm">
+  <div class="modal-content">
+    <form class="form-group" name="fg" [formGroup]="fg" (ngSubmit)="fg.valid && OnSumbit()">
+      <h2>{{'Add Employee' | uppercase}}</h2>
+
+      <label for="employeename">EmployeeName:</label>
+      <input type="text" id="employeename" name="employeename" formControlName="EmployeeName" [required]="true">
+        <div *ngIf="fg.get('EmployeeName')?.invalid && (fg.get('EmployeeName')?.dirty || fg.get('EmployeeName')?.touched)"
+        class="error-message">
+        <div *ngIf="fg.get('EmployeeName')?.hasError('required')">Employee Name is required.</div>
+        <div *ngIf="fg.get('EmployeeName')?.hasError('minlength')">Employee Name must be at least 2 characters long.
+        </div>
+      </div>
+
+      <label for="department">Department:</label>
+      <input type="text" class="is-invalid" id="department" name="department" formControlName="Department">
+      <div *ngIf="fg.get('Department')?.invalid && (fg.get('Department')?.dirty || fg.get('Department')?.touched)"
+        class="error-message">
+        <div *ngIf="fg.get('Department')?.hasError('required')"> department is required.</div>
+      </div>
+
+      <label for="jobtitle">JobTitle:</label>
+      <input type="text" id="jobtitle" name="jobtitle" formControlName="jobtitle">
+      <div *ngIf="fg.get('jobtitle')?.invalid && (fg.get('jobtitle')?.dirty || fg.get('jobtitle')?.touched)"
+        class="error-message">
+        <div *ngIf="fg.get('jobtitle')?.hasError('required')">jobtitle is required.</div>
+      </div>
+
+      <label for="phonenumber">PhoneNumber:</label>
+      <input type="tel" id="phonenumber" name="phonenumber" formControlName="phonenumber">
+      <div *ngIf="fg.get('phonenumber')?.invalid && (fg.get('phonenumber')?.dirty || fg.get('phonenumber')?.touched)"
+        class="error-message">
+        <div *ngIf="fg.get('phonenumber')?.hasError('required')">phone number is required.</div>
+        <div *ngIf="fg.get('phonenumber')?.hasError('maxlength')">phone number max length 10 .</div>
+      </div>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" formControlName="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <div *ngIf="fg.get('gender')?.invalid && (fg.get('gender')?.dirty || fg.get('gender')?.touched)"
+        class="error-message">
+        <div *ngIf="fg.get('gender')?.hasError('required')">gender is required.</div>
+      </div>
+
+      <label for="dob">Date_of_Birth:</label>
+      <input type="date" id="dob" name="dob" formControlName="dob">
+      <div *ngIf="fg.get('dob')?.invalid && (fg.get('dob')?.dirty || fg.get('dob')?.touched)" class="error-message">
+        <div *ngIf="fg.get('dob')?.hasError('required')">date of birth is required.</div>
+      </div>
+
+      <label for="matrialstatus">Marital_Status:</label>
+      <select id="matrialstatus" name="matrialstatus" formControlName="matrialstatus">
+        <option value="single">Single</option>
+        <option value="married">Married</option>
+      </select>
+
+      <div
+        *ngIf="fg.get('matrialstatus')?.invalid && (fg.get('matrialstatus')?.dirty || fg.get('matrialstatus')?.touched)"
+        class="error-message">
+        <div *ngIf="fg.get('matrialstatus')?.hasError('required')">matrialstatus is required.</div>
+      </div>
+
+      <label for="managername">Manager_Name:</label>
+      <input type="text" id="managername" name="managername" formControlName="managername">
+      <div *ngIf="fg.get('managername')?.invalid && (fg.get('managername')?.dirty || fg.get('managername')?.touched)"
+        class="error-message">
+        <div *ngIf="fg.get('managername')?.hasError('required')">manager name is required.</div>
+      </div>
+
+      <label for="salary">Salary:</label>
+      <input type="number" id="salary" name="salary" formControlName="salary">
+
+      <div class="button">
+        <div *ngIf="fg.get('salary')?.invalid && (fg.get('salary')?.dirty || fg.get('salary')?.touched)"
+          class="error-message">
+          <div *ngIf="fg.get('salary')?.hasError('required')">salar is required.</div>
+        </div>
+
+        <div *ngIf="generalError" class="error-message">
+          Please fill in all required fields.
+        </div>
+
+        <P>{{message}}</P>
+        <button type="submit" style="font-size:18px" class="fa">Submit &#xf1d9;</button>
+        <button type="button" class="fa" style="font-size:18px;" (click)="toggleForm()">Close &#xf00d;</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+<router-outlet></router-outlet>

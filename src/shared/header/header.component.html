@@ -1,0 +1,19 @@
+<div class="container" *ngIf="showHeader">
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/white-logo.png" alt="logo">
+      </div>
+      <ul class="nav-links">
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/supports">Services</a></li>
+        <li [ngClass]="{'hide-element': authService.isLoggedInUser()}"><a routerLink="/signin">Sign In</a></li>
+        <li [ngClass]="{'hide-element': !authService.isLoggedInUser()}"><a routerLink="/userprofile">User Profile</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</div>
+
+<router-outlet></router-outlet>
